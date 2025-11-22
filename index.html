@@ -9,12 +9,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,600&family=Inter:wght@400;500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
 <body>
     <div class="home">
-        <header>
+        <div class="page1">
             <div class="hero">
                 <nav>
                     <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('show')">
@@ -25,17 +26,17 @@
 
                     <ul>
                         <li>
-                            <h3>Travel Bloom</h3>
+                            <h3 class="reveal">Travel Bloom</h3>
                         </li>
-                        <li><a class="active" href="home.html">Home Page</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><input type="text" id="searchinput" placeholder="Search for Destinations"></li>
-                        <li><button id="searchbtn">Search</button></li>
+                        <li class="reveal"><a class="active" href="home.html">Home Page</a></li>
+                        <li class="reveal"><a href="about.html">About Us</a></li>
+                        <li class="reveal"><a href="contact.html">Contact Us</a></li>
+                        <li class="reveal"><input type="text" id="searchinput" placeholder="Search for Destinations"></li>
+                        <li class="reveal"><button id="searchbtn">Search</button></li>
                     </ul>
                     <div id="destinationinfo"></div>
                 </nav>
-                <div class="hero-text">
+                <div class="hero-text reveal">
                     <h1>
                         it’s a big world out there – <br>
                         we’re here to help you <br>
@@ -44,30 +45,50 @@
                     </h1>
                 </div>
             </div>
-        </header>
-        <div class="description">
-            <p>Dreaming of your next adventure? At Travel Bloom, we help you turn those dreams into reality...</p>
-            <p>We believe travel is more than just reaching a destination—it’s about experiences that touch your soul...
-            </p>
-            <p>"The world is a book, and those who do not travel read only one page."</p>
-            <button>BOOK NOW</button>
         </div>
+        <div class="description">
+            <p class="reveal">Dreaming of your next adventure? At Travel Bloom, we help you turn those dreams into reality...</p>
+            <p class="reveal">We believe travel is more than just reaching a destination—it’s about experiences that touch your soul...
+            </p>
+            <p class="reveal">"The world is a book, and those who do not travel read only one page."</p>
+            <button class="reveal">BOOK NOW</button>
+        </div>
+        <div class="page2 ">
+            <h1 class="reveal">EXPLORE.</h1>
+            <form class="reveal">
+                <input list="countries" id="countries-name" name="country" placeholder="Choose a country">
+                <datalist id="countries">
+                    <option value="Italy">
+                    <option value="Turkey">
+                    <option value="Madagascar">
+                    <option value="Singapore">
+                    <option value="Thailand">
+                </datalist>
 
-        <footer>
-            <div class="left">
-                <p>TRAVEL BLOOM</p>
-                <p>hello@travelbloom.com</p>
-                <p>Explore world-famous landmarks and hidden gems. From booking to exploring, everything simplified with
-                    Travel Bloom.</p>
-            </div>
-            <div class="right">
-                <p>CONNECT</p>
-                <div id="sociallinks">
-                    <a href="instagram">🌐</a>
-                    <a href="linkedin">💼</a>
-                    <a href="whatsapp">💬</a>
+            </form>
+            <button id='btnSearch' class="reveal">Search</button>
+            <div class="search-place">
+                <div id="result">
                 </div>
             </div>
+        </div>
+        <footer>
+            <div class="left reveal">
+                <p class="reveal">TRAVEL BLOOM</p>
+                <p class="reveal">hello@travelbloom.com</p>
+                <p class="reveal">Explore world-famous landmarks and hidden gems. From booking to exploring, everything simplified with
+                    Travel Bloom.</p>
+            </div>
+            <div class="right reveal">
+                <p class="reveal">CONNECT</p>
+                <div class="social-icons reveal">
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram reveal"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin reveal"></i></a>
+                    <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp reveal"></i></a>
+                </div>
+
+            </div>
+
         </footer>
     </div>
     <script src="travel.js"></script>

@@ -54,3 +54,49 @@ function showdestinationdetails(event) {
         })
 }
 document.getElementById('searchbtn').addEventListener('click', showdestinationdetails);
+
+
+
+
+const btnSearch = document.getElementById('btnSearch');
+function searchPlaces() {
+    const input = document.getElementById('countries-name').value.toLowerCase();
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '';
+    fetch('travel.json')
+        .then(response => response.json())
+        .then(data => {
+            const places = data.places.find(item => item.name.toLowerCase() === input);
+
+
+            if (places) {
+                const description = places.description;
+                resultDiv.innerHTML += `<div class="polaroid"><img src="${places.imagesrc}" alt="${places.name}"> <h3>${places.name}</h3> </div> `;
+                resultDiv.innerHTML += `<p>${description}</p>`;
+            } else {
+                resultDiv.innerHTML = 'Place not found.';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            resultDiv.innerHTML = 'An error occurred while fetching data.';
+        });
+}
+btnSearch.addEventListener('click', (e) => {
+    e.preventDefault();
+    searchPlaces();
+});
+
+const reveals = document.querySelectorAll(".reveal");
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show"); 
+        observer.unobserve(entry.target);     
+      }
+    });
+  }, { threshold: 0.1 }); 
+  reveals.forEach(reveal => {
+    observer.observe(reveal);
+  });
+  
